@@ -51,7 +51,7 @@ struct colour {
     //    {75, 0, 130, 0},     // Indigo
         {148, 0, 211, 0},    // Violet
         {255, 255,255, 0},   // White
-        {255, 255,255, 255}, // White_white
+        {255, 255,255, 0}, // White_white
         {0, 0 , 0, 0},       // Black
 };
 
@@ -100,7 +100,7 @@ uint8_t     i;
 
     // pixels.Color() takes RGB values, from 0,0,0 up to 255,255,255
     // Here we're using a moderately bright green color:
-    pixels.setPixelColor(i, pixels.Color(150, 0, 0, 0));
+    pixels.setPixelColor(i, pixels.Color(250, 0, 0, 0));
 
     pixels.show();   // Send the updated pixel colors to the hardware.
 
@@ -404,5 +404,5 @@ uint8_t     i;
 
 void loop() 
 {
-    sequence_2();
+    sequence_0();
 }
