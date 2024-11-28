@@ -23,6 +23,7 @@ unsigned long Millis;
 Adafruit_NeoPixel pixels(NUMPIXELS, PIN, NEO_RGB + NEO_KHZ800);
 
 #define DELAYVAL_MS     200 // Time (in milliseconds) to pause between pixels
+#define DELAY_5SEC      5000
 #define DWELL_TIME_MS   1000
 #define FIRST_PIXEL     0
 
@@ -90,22 +91,37 @@ void setup()
 //=======================================================================
 
 //=======================================================================
-// sequence 0 : cycle neopixels
+// sequence 0 : cycle neopixels through red, green,blue, off
 
 void sequence_0(void) 
 {
 uint8_t     i;
 
-  for(i=0; i<NUMPIXELS; i++) { // For each pixel...
-
-    // pixels.Color() takes RGB values, from 0,0,0 up to 255,255,255
-    // Here we're using a moderately bright green color:
-    pixels.setPixelColor(i, pixels.Color(250, 0, 0, 0));
-
-    pixels.show();   // Send the updated pixel colors to the hardware.
-
-    delay(DELAYVAL_MS); // Pause before next pass through loop
+    for(i=0; i<NUMPIXELS; i++) { // For each pixel...
+        pixels.setPixelColor(i, pixels.Color(150, 0, 0, 0));  // RED
     }
+    pixels.show();       // Send the updated pixel colors to the hardware.
+    delay(DELAY_5SEC);
+    for(i=0; i<NUMPIXELS; i++) { // For each pixel...
+        pixels.setPixelColor(i, pixels.Color(0, 150, 0, 0));  // GREEN
+    }
+    pixels.show(); 
+    delay(DELAY_5SEC);
+    for(i=0; i<NUMPIXELS; i++) { // For each pixel...
+        pixels.setPixelColor(i, pixels.Color(0, 0, 150, 0));   // BLUE
+    }
+    pixels.show();
+    delay(DELAY_5SEC);
+    for(i=0; i<NUMPIXELS; i++) { // For each pixel...
+        pixels.setPixelColor(i, pixels.Color(150, 150, 150, 0));     // WHITE
+    }
+    pixels.show();
+    delay(DELAY_5SEC);
+    for(i=0; i<NUMPIXELS; i++) { // For each pixel...
+        pixels.setPixelColor(i, pixels.Color(0, 0, 0, 0));     //OFF
+    }
+    pixels.show();
+    delay(DELAY_5SEC);
 }
 
 //=======================================================================
