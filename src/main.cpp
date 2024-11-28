@@ -20,7 +20,7 @@ unsigned long Millis;
 // and which pin to use to send signals. Note that for older NeoPixel
 // strips you might need to change the third parameter -- see the
 // strandtest example for more information on possible values.
-Adafruit_NeoPixel pixels(NUMPIXELS, PIN, NEO_RGB + NEO_KHZ800);
+Adafruit_NeoPixel pixels(NUMPIXELS, PIN, NEO_RGBW + NEO_KHZ800);
 
 #define DELAYVAL_MS     200 // Time (in milliseconds) to pause between pixels
 #define DWELL_TIME_MS   1000
